@@ -1,0 +1,37 @@
+root: true
+
+parserOptions:
+  project: ./tsconfig.json
+
+extends:
+  - airbnb-typescript
+  - airbnb/hooks
+  - plugin:@typescript-eslint/recommended
+  - plugin:@typescript-eslint/recommended-requiring-type-checking
+  - prettier
+
+plugins:
+  - simple-import-sort
+
+rules:
+  '@typescript-eslint/explicit-module-boundary-types': off
+
+  import/no-default-export: error
+  import/prefer-default-export: off
+
+  react/jsx-props-no-spreading: off
+  react/react-in-jsx-scope: off
+  react/require-default-props: off
+
+  simple-import-sort/exports: error
+  simple-import-sort/imports: error
+
+  no-plusplus: off
+  no-restricted-syntax: off
+
+overrides:
+  - files:
+      - ./src/pages/**/*.tsx
+    rules:
+      import/no-default-export: off
+      import/prefer-default-export: error
