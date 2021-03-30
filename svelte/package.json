@@ -2,7 +2,7 @@
   "name": "svelte",
   "version": "0.0.1",
   "scripts": {
-    "dev": "NODE_ENV=development svelte-kit dev -p 8082",
+    "dev": "NODE_ENV=development VITE_SERVER_URL=http://localhost:8080 svelte-kit dev -p 8082",
     "build": "svelte-kit build",
     "start": "svelte-kit start -p 8082"
   },
@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-node": "next",
+    "@sveltejs/adapter-vercel": "next",
     "@sveltejs/kit": "next",
     "@tailwindcss/jit": "^0.1.11",
     "@tailwindcss/typography": "^0.4.0",

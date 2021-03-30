@@ -9,3 +9,9 @@ declare module 'svelte-markdown' {
   // eslint-disable-next-line import/no-default-export
   export default Markdown;
 }
+
+declare namespace NodeJS {
+  interface ProcessEnv {
+    readonly SERVER_URL: string;
+  }
+}

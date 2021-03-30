@@ -4,9 +4,8 @@
   import PluginPage from '$lib/components/PluginPage.svelte';
 
   export async function load({ fetch }: LoadInput): Promise<LoadOutput> {
-    const response = ((await fetch(
-      'http://localhost:8080',
-    )) as unknown) as Response;
+    const url = `${import.meta.env.VITE_SERVER_URL as string}/api/data`;
+    const response = ((await fetch(url)) as unknown) as Response;
 
     const data = (await response.json()) as PageData;
 
