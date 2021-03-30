@@ -23,9 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <Layout centered>
-        {isLoading ? <h1>Loading...</h1> : <PluginPage />}
-      </Layout>
+      <Layout>{isLoading ? <h1>Loading...</h1> : <PluginPage />}</Layout>
     </>
   );
 }
