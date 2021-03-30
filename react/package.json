@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon -x 'next dev -p 8081' -w tailwind.config.js",
+    "dev": "SERVER_URL=http://localhost:8080 nodemon -x 'next dev -p 8081' -w tailwind.config.js",
     "build": "next build",
     "start": "next start -p 8081"
   },

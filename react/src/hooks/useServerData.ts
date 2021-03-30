@@ -5,17 +5,18 @@ import { dehydrate, DehydratedState } from 'react-query/hydration';
 import { PageData } from '@/types';
 
 async function getData(): Promise<PageData> {
-  const { data } = await axios.get<PageData>('http://localhost:8080');
+  const url = `${process.env.SERVER_URL}/api/data`;
+  const { data } = await axios.get<PageData>(url);
   return data;
 }
 
 export async function prefetchServerData(): Promise<DehydratedState> {
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery('/', getData);
+  await queryClient.prefetchQuery('/api/data', getData);
 
   return dehydrate(queryClient);
 }
 
 export function useServerData(): UseQueryResult<PageData, AxiosError> {
-  return useQuery('/', getData);
+  return useQuery('/api/data', getData);
 }
