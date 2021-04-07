@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import tw from 'twin.macro';
 
 import { AppBar } from '@/components/AppBar';
 
